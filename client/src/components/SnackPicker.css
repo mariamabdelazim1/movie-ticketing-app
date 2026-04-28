@@ -1,0 +1,63 @@
+.concessions {
+  display: grid;
+  gap: 12px;
+}
+
+.concession {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #e5e5df;
+  border-radius: 8px;
+}
+
+.concession img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.concession div {
+  display: grid;
+  gap: 4px;
+}
+
+.concession span,
+.concession small {
+  color: #666666;
+}
+
+.concession span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stepper {
+  display: grid !important;
+  grid-template-columns: 32px 28px 32px;
+  align-items: center;
+  text-align: center;
+}
+
+.stepper button {
+  border: 0;
+  border-radius: 6px;
+  height: 32px;
+  background: #111111;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+@media (max-width: 560px) {
+  .concession {
+    grid-template-columns: 64px 1fr;
+  }
+
+  .stepper {
+    grid-column: 1 / -1;
+  }
+}
