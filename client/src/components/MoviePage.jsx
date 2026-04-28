@@ -1,4 +1,3 @@
-import React from "react";
 import { Crown } from "lucide-react";
 import { formatDate, formatShowTime, money, youtubeEmbedUrl } from "../utils/format.js";
 import "./MoviePage.css";

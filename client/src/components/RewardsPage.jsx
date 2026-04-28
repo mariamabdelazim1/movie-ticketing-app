@@ -1,4 +1,3 @@
-import React from "react";
 import { Gift } from "lucide-react";
 import { AuthPrompt } from "./AuthPrompt.jsx";
 import "./RewardsPage.css";

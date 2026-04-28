@@ -1,4 +1,3 @@
-import React from "react";
 import "./MoviesPage.css";
 export function MoviesPage({ movies, openMovie }) {
   return (

@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, Clapperboard, Loader2, LogIn, UserRound } from "lucide-react";
 import { AuthPage } from "./components/AuthPage.jsx";
@@ -38,7 +37,7 @@ export function App() {
     const saved = localStorage.getItem("cinemaUser");
     try {
       return saved ? JSON.parse(saved) : null;
-    } catch (error) {
+    } catch {
       localStorage.removeItem("cinemaUser");
       return null;
     }
@@ -95,7 +94,7 @@ export function App() {
       ]);
       setMovies(await movieRes.json());
       setConcessions(await concessionRes.json());
-    } catch (err) {
+    } catch {
       setError("Could not load cinema data. Start MongoDB and the API, then refresh.");
     } finally {
       setLoading(false);
@@ -116,7 +115,7 @@ export function App() {
         setUser(data);
         localStorage.setItem("cinemaUser", JSON.stringify(data));
       }
-    } catch (err) {
+    } catch {
       setError("Could not refresh profile.");
     }
   }
@@ -124,7 +123,7 @@ export function App() {
   async function loadBookings(userId) {
     try {
       setBookings(await fetch(`${API_URL}/users/${userId}/reservations`).then((res) => res.json()));
-    } catch (err) {
+    } catch {
       setError("Could not load bookings.");
     }
   }
@@ -133,7 +132,7 @@ export function App() {
     setSelectedSeats([]);
     try {
       setShowDetails(await fetch(`${API_URL}/shows/${showId}`).then((res) => res.json()));
-    } catch (err) {
+    } catch {
       setError("Could not load this show.");
     }
   }

@@ -33,7 +33,7 @@ export function youtubeEmbedUrl(url) {
     const parsed = new URL(url);
     const videoId = parsed.searchParams.get("v") || parsed.pathname.split("/").filter(Boolean).pop();
     return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
-  } catch (error) {
+  } catch {
     return url;
   }
 }
