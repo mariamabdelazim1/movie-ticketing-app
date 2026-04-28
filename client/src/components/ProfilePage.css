@@ -1,0 +1,17 @@
+.profile {
+  width: min(520px, 100%);
+  justify-items: start;
+}
+
+.profile-form {
+  width: 100%;
+  border-top: 1px solid #e2e2de;
+  border-bottom: 1px solid #e2e2de;
+  padding: 18px 0;
+}
+
+.profile-form h3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}

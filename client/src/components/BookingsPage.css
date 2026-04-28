@@ -1,0 +1,47 @@
+.list-page {
+  display: grid;
+  gap: 14px;
+}
+
+.booking-row {
+  border: 1px solid #e2e2de;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 22px;
+  display: grid;
+  grid-template-columns: 84px 1fr auto;
+  gap: 18px;
+  align-items: center;
+}
+
+.booking-row.cancelled {
+  opacity: 0.62;
+}
+
+.booking-row img {
+  width: 84px;
+  height: 116px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.booking-actions {
+  display: grid;
+  justify-items: end;
+  gap: 10px;
+}
+
+.small-btn {
+  min-height: 36px;
+  padding: 0 12px;
+}
+
+@media (max-width: 560px) {
+  .booking-row {
+    grid-template-columns: 64px 1fr;
+  }
+
+  .booking-row strong {
+    grid-column: 1 / -1;
+  }
+}
