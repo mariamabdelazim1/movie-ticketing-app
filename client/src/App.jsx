@@ -15,7 +15,7 @@ import { SnacksPage } from "./components/SnacksPage.jsx";
 import { API_URL, titleForPage } from "./utils/format.js";
 
 const REWARD_COSTS = {
-  freePopcorn: 500,
+  freePopcorn: 600,
   ticketDiscount: 1000,
   freeTicket: 1800
 };
