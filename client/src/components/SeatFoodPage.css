@@ -1,0 +1,67 @@
+.booking-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.9fr) 320px;
+  gap: 18px;
+  align-items: start;
+}
+
+.screen {
+  height: 28px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: linear-gradient(90deg, #111111, #565656, #111111);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+
+.seat-map {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(34px, 1fr));
+  gap: 8px;
+}
+
+.seat-map.gold-map {
+  grid-template-columns: repeat(6, minmax(42px, 1fr));
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+.seat {
+  min-height: 38px;
+  border: 1px solid #d6d6d1;
+  border-radius: 8px 8px 3px 3px;
+  color: #111111;
+  background: #e9f2ff;
+  font-weight: 800;
+}
+
+.seat.selected {
+  color: #ffffff;
+  background: #dc0a7d;
+}
+
+.seat.booked {
+  cursor: not-allowed;
+  color: #909090;
+  background: #e5e5e0;
+}
+
+@media (max-width: 1180px) {
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .seat-map {
+    gap: 5px;
+  }
+
+  .seat {
+    min-height: 32px;
+    padding: 0;
+    font-size: 0.72rem;
+  }
+}
