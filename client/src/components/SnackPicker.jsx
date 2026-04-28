@@ -1,3 +1,4 @@
+import React from "react";
 import { Coffee, Popcorn } from "lucide-react";
 import { money } from "../utils/format.js";
 import "./SnackPicker.css";

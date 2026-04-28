@@ -1,3 +1,4 @@
+import React from "react";
 import { ReceiptText } from "lucide-react";
 import { formatShowTime, money } from "../utils/format.js";
 import { CartSummary } from "./CartSummary.jsx";

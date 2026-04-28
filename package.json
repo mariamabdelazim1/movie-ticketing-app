@@ -1,15 +1,20 @@
-
 {
   "name": "movie-ticketing-app",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "client": "npm run dev --prefix client",
-    "server": "npm run dev --prefix server",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "client": "npm run dev:client --workspace client",
+    "server": "npm run dev --workspace server",
+    "seed": "npm run seed --workspace server",
+    "sync:trailers": "npm run sync:trailers --workspace server",
+    "install:all": "npm install && npm install --workspace client && npm install --workspace server"
   },
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "devDependencies": {
     "concurrently": "^8.2.2"
   }
 }
-

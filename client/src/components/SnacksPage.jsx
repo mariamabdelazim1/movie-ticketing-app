@@ -1,3 +1,4 @@
+import React from "react";
 import { money } from "../utils/format.js";
 import { SnackPicker } from "./SnackPicker.jsx";
 import "./CartSummary.css";

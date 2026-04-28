@@ -1,3 +1,4 @@
+import React from "react";
 import { Clapperboard, Gift, Popcorn, ShoppingCart, Ticket, UserRound } from "lucide-react";
 import "./Sidebar.css";
 

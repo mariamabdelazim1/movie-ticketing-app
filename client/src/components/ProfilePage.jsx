@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { KeyRound, Trash2, UserRound } from "lucide-react";
 import { AuthPrompt } from "./AuthPrompt.jsx";

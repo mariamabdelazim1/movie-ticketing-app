@@ -31,9 +31,26 @@ export const canCancelBooking = (booking) =>
 export function youtubeEmbedUrl(url) {
   try {
     const parsed = new URL(url);
-    const videoId = parsed.searchParams.get("v") || parsed.pathname.split("/").filter(Boolean).pop();
-    return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
-  } catch {
+    const pathParts = parsed.pathname.split("/").filter(Boolean);
+    const videoId =
+      parsed.searchParams.get("v") ||
+      (pathParts[0] === "embed" ? pathParts[1] : "") ||
+      (pathParts[0] === "shorts" ? pathParts[1] : "") ||
+      (parsed.hostname.includes("youtu.be") ? pathParts[0] : "");
+    const startTime = parsed.searchParams.get("start") || parsed.searchParams.get("t");
+    const start = startTime ? Number.parseInt(startTime, 10) || 0 : 0;
+    const params = new URLSearchParams({
+      rel: "0",
+      modestbranding: "1",
+      playsinline: "1"
+    });
+
+    if (start > 0) {
+      params.set("start", String(start));
+    }
+
+    return videoId ? `https://www.youtube-nocookie.com/embed/${videoId}?${params}` : url;
+  } catch (error) {
     return url;
   }
 }

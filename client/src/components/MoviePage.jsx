@@ -1,3 +1,4 @@
+import React from "react";
 import { Crown } from "lucide-react";
 import { formatDate, formatShowTime, money, youtubeEmbedUrl } from "../utils/format.js";
 import "./MoviePage.css";
@@ -8,10 +9,12 @@ export function MoviePage({ movie, chooseShow, user }) {
       <div className="trailer-layout">
         <img className="detail-poster" src={movie.poster} alt={movie.title} />
         <iframe
+          key={movie._id}
           className="trailer-frame"
           src={youtubeEmbedUrl(movie.trailerUrl)}
           title={`${movie.title} trailer`}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         />
       </div>

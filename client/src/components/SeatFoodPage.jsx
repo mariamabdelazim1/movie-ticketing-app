@@ -1,3 +1,4 @@
+import React from "react";
 import { ShoppingCart } from "lucide-react";
 import { formatShowTime } from "../utils/format.js";
 import { CartSummary } from "./CartSummary.jsx";

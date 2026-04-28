@@ -27,7 +27,16 @@ app.use((error, req, res, next) => {
 
 connectDb()
   .then(() => {
-    app.listen(port, () => console.log(`API listening on http://localhost:${port}`));
+    const server = app.listen(port, () => console.log(`API listening on http://localhost:${port}`));
+
+    server.on("error", (error) => {
+      if (error.code === "EADDRINUSE") {
+        console.error(`Port ${port} is already in use. Stop the old backend or set PORT in server/.env.`);
+        process.exit(1);
+      }
+
+      throw error;
+    });
   })
   .catch((error) => {
     console.error("Failed to connect to MongoDB", error);

@@ -1,3 +1,4 @@
+import React from "react";
 import { canCancelBooking, formatShowTime, money } from "../utils/format.js";
 import "./BookingsPage.css";
 

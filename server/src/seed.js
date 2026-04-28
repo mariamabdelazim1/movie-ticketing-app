@@ -9,6 +9,22 @@ const moviePoster = (fileName) => `/posters/${fileName}`;
 
 const release = (date) => new Date(`${date}T00:00:00.000Z`);
 
+const TRAILERS = {
+  bershama: "https://www.youtube.com/watch?v=ymedaKBL2wM",
+  michael: "https://www.youtube.com/watch?v=3zOLzsbOleM&t=8s",
+  goat: "https://www.youtube.com/watch?v=ggZA2oi8S5s",
+  superMarioGalaxy: "https://www.youtube.com/watch?v=GuCejewteF8",
+  egyBest: "https://www.youtube.com/watch?v=LY_weJMN1nE",
+  saffahElTagammou: "https://www.youtube.com/watch?v=WdxOXQ0a9n4",
+  theMummy: "https://www.youtube.com/watch?v=XJ0uv-phsDk",
+  desertWarrior: "https://www.youtube.com/watch?v=fraAGOuT3sA",
+  projectHailMary: "https://www.youtube.com/watch?v=m08TxIsFTRI",
+  hoppers: "https://www.youtube.com/watch?v=PypDSyIRRSs",
+  theRaiders: "https://www.youtube.com/watch?v=sbfK5lw3iLY",
+  familyBusiness: "https://www.youtube.com/watch?v=zTgeV3rM2fg",
+  thisIsNotATest: "https://www.youtube.com/watch?v=DXAjPhglafE"
+};
+
 const movieData = [
   {
     title: "Bershama",
@@ -19,7 +35,7 @@ const movieData = [
     subtitles: "English",
     releaseDate: release("2026-03-19"),
     poster: moviePoster("bershama.jpg"),
-    trailerUrl: "https://www.youtube.com/watch?v=ymedaKBL2wM",
+    trailerUrl: TRAILERS.bershama,
     cast: ["Hesham Maged", "Hatem Salah", "Mostafa Ghareeb"],
     synopsis:
       "In a high school exam, the supervisor dies mid-test, and the students try to hide it, hoping to cheat. Only problem? Nobody knows the answers. Among the chaos are a top student obsessed with being proper, the mayor's hopelessly dumb son who must pass at any cost, a dancer chasing a diploma to work abroad, a sixty-year-old woman chasing a pension boost, and a former criminal desperate to pass so he can marry. Absurd schemes, nonstop chaos, and wild laughs turn this exam into a hilarious disaster."
@@ -33,7 +49,7 @@ const movieData = [
     subtitles: "Arabic",
     releaseDate: release("2026-04-23"),
     poster: moviePoster("michael.jpg"),
-    trailerUrl: "https://www.youtube.com/watch?v=3zOLzsbOleM&t=8s",
+    trailerUrl: TRAILERS.michael,
     cast: ["Nia Long", "Jaafar Jackson", "Laura Harrier"],
     synopsis:
       "Michael is the cinematic portrayal of the life and legacy of one of the most influential artists the world has ever known. The film tells the story of Michael Jackson's life beyond the music, tracing his journey from the discovery of his extraordinary talent as the lead of the Jackson Five, to the visionary artist whose creative ambition fueled a relentless pursuit to become the biggest entertainer in the world."
@@ -47,7 +63,7 @@ const movieData = [
     subtitles: "Arabic",
     releaseDate: release("2026-04-23"),
     poster: moviePoster("goat.jpg"),
-    trailerUrl: "https://www.youtube.com/watch?v=3zOLzsbOleM&t=8s",
+    trailerUrl: TRAILERS.goat,
     cast: ["Gabrielle Union", "Caleb McLaughlin", "Stephen Curry"],
     synopsis:
       "From Sony Pictures Animation, the studio behind Spider-Man: Across the Spider-Verse and the artists that made KPop Demon Hunters, comes GOAT, an original action-comedy set in an all-animal world. The story follows Will, a small goat with big dreams who gets a once-in-a-lifetime shot to join the pros and play roarball, a high-intensity, co-ed, full-contact sport dominated by the fastest, fiercest animals in the world."
@@ -61,7 +77,7 @@ const movieData = [
     subtitles: "Arabic",
     releaseDate: release("2026-04-02"),
     poster: moviePoster("superMario.jpg"),
-    trailerUrl: "https://www.youtube.com/watch?v=3zOLzsbOleM&t=8s",
+    trailerUrl: TRAILERS.superMarioGalaxy,
     cast: ["Jack Black", "Anya Taylor-Joy", "Chris Pratt", "Charlie Day"],
     synopsis:
       "The Super Mario Galaxy Movie is an animated film based on the world of Super Mario Bros., and follows The Super Mario Bros. Movie, which was released in 2023 and earned more than $1.3 billion worldwide. The film is produced by Chris Meledandri of Illumination and Shigeru Miyamoto of Nintendo."
@@ -75,7 +91,7 @@ const movieData = [
     subtitles: "English",
     releaseDate: release("2026-03-19"),
     poster: moviePoster("egyBest.jpg"),
-    trailerUrl: "https://www.youtube.com/watch?v=3zOLzsbOleM&t=8s",
+    trailerUrl: TRAILERS.egyBest,
     cast: ["Salma Abu Deif", "Ahmed Malek", "Marwan Pablo"],
     synopsis:
       "Inspired by real events, it chronicles the founding of EgyBest, the platform that shook the foundations of copyright in the Arab world. The story begins in an alley in El Marg district in Cairo, where two friends decide to turn their passion for the big screen into a digital rebellion."
@@ -89,7 +105,7 @@ const movieData = [
     subtitles: "None",
     releaseDate: release("2026-03-19"),
     poster: moviePoster("safahElTagamoa.jpg"),
-    trailerUrl: "https://www.youtube.com/watch?v=WdxOXQ0a9n4",
+    trailerUrl: TRAILERS.saffahElTagammou,
     cast: ["Ahmed Al-Fishawy", "Sabrien", "Faten Saeed", "Cynthia Khalifeh"],
     synopsis:
       "It follows the story of a serial killer named Karim, who grew up alone searching for himself, and finds what he seeks in disobeying his family. Years later, he forms a relationship with a beautiful girl and begins a series of murders of a number of women."
@@ -103,7 +119,7 @@ const movieData = [
     subtitles: "Arabic",
     releaseDate: release("2026-04-16"),
     poster: moviePoster("theMummy.jpg"),
-    trailerUrl: "https://www.youtube.com/watch?v=WdxOXQ0a9n4",
+    trailerUrl: TRAILERS.theMummy,
     cast: ["Jack Reynor", "Laia Costa", "May Calamawy"],
     synopsis:
       "The young daughter of a journalist disappears into the desert without a trace. Eight years later, the broken family is shocked when she is returned to them, as what should be a joyful reunion turns into a living nightmare."
@@ -117,7 +133,7 @@ const movieData = [
     subtitles: "Arabic",
     releaseDate: release("2026-04-23"),
     poster: moviePoster("desertWarrior.jpg"),
-    trailerUrl: "https://www.youtube.com/watch?v=WdxOXQ0a9n4",
+    trailerUrl: TRAILERS.desertWarrior,
     cast: ["Aiysha Hart", "Ghassan Massoud", "Anthony Mackie"],
     synopsis:
       "7th century Arabia. Courageous Princess Hind refuses to serve as concubine to the merciless Sassanid Emperor Kisra. Escaping with her father into the unforgiving desert, Hind is pursued by Kisra's troops and forced to trust a mysterious bandit."
@@ -131,7 +147,7 @@ const movieData = [
     subtitles: "Arabic",
     releaseDate: release("2026-03-19"),
     poster: moviePoster("projectHailMary.jpg"),
-    trailerUrl: "https://www.youtube.com/watch?v=WdxOXQ0a9n4",
+    trailerUrl: TRAILERS.projectHailMary,
     cast: ["Ryan Gosling", "Sandra Huller", "Lionel Boyce", "Ken Leung"],
     synopsis:
       "Science teacher Ryland Grace wakes up on a spaceship light years from home with no recollection of who he is or how he got there. As his memory returns, he begins to uncover his mission: solve the riddle of the mysterious substance causing the sun to die out."
@@ -145,7 +161,7 @@ const movieData = [
     subtitles: "Arabic",
     releaseDate: release("2026-03-18"),
     poster: moviePoster("Hoppers.jpg"),
-    trailerUrl: "https://www.youtube.com/watch?v=WdxOXQ0a9n4",
+    trailerUrl: TRAILERS.hoppers,
     cast: ["Jon Hamm", "Piper Curda", "Bobby Moynihan"],
     synopsis:
       "An animal lover uses technology that places her consciousness into a robotic beaver to uncover mysteries within the animal world beyond her imagination."
@@ -159,7 +175,7 @@ const movieData = [
     subtitles: "Arabic",
     releaseDate: release("2026-04-09"),
     poster: moviePoster("theRaiders.jpg"),
-    trailerUrl: "https://www.youtube.com/watch?v=WdxOXQ0a9n4",
+    trailerUrl: TRAILERS.theRaiders,
     cast: ["Jackie Chan", "Gulnezer Bextiyar", "Yixing Zhang"],
     synopsis:
       "Professor Fang leads a team of archaeologists to discover a mysterious jade that takes him back in time in an action-packed journey."
@@ -173,7 +189,7 @@ const movieData = [
     subtitles: "None",
     releaseDate: release("2026-03-19"),
     poster: moviePoster("familyBusiness.jpg"),
-    trailerUrl: "https://www.youtube.com/watch?v=WdxOXQ0a9n4",
+    trailerUrl: TRAILERS.familyBusiness,
     cast: ["Mohamed Saad", "Ghada Adel", "Hidy Karam"],
     synopsis:
       "A poor family struggles to survive through small acts of theft, while the father dreams of a better life for his children. After an incident that nearly lands him in prison, he decides to abandon crime, only to realize that reality offers them no real opportunities."
@@ -187,7 +203,7 @@ const movieData = [
     subtitles: "English",
     releaseDate: release("2026-04-02"),
     poster: moviePoster("superMarioGalaxy.jpg"),
-    trailerUrl: "https://www.youtube.com/watch?v=WdxOXQ0a9n4",
+    trailerUrl: TRAILERS.superMarioGalaxy,
     cast: ["Jack Black", "Anya Taylor-Joy", "Chris Pratt", "Charlie Day"],
     synopsis:
       "The Super Mario Galaxy Movie is an animated film based on the world of Super Mario Bros. This Arabic-language version follows Mario and friends through a bright cosmic adventure."
@@ -201,7 +217,7 @@ const movieData = [
     subtitles: "None",
     releaseDate: release("2026-04-23"),
     poster: moviePoster("goat.jpg"),
-    trailerUrl: "https://www.youtube.com/watch?v=WdxOXQ0a9n4",
+    trailerUrl: TRAILERS.goat,
     cast: ["Gabrielle Union", "Caleb McLaughlin", "Stephen Curry"],
     synopsis:
       "GOAT is an original action-comedy set in an all-animal world. Will, a small goat with big dreams, gets a once-in-a-lifetime shot to join the pros and prove that smalls can ball."
@@ -215,7 +231,7 @@ const movieData = [
     subtitles: "Arabic",
     releaseDate: release("2026-04-23"),
     poster: moviePoster("thisIsNotATest.jpg"),
-    trailerUrl: "https://www.youtube.com/watch?v=WdxOXQ0a9n4",
+    trailerUrl: TRAILERS.thisIsNotATest,
     cast: ["Olivia Holt", "Froy Gutierrez", "Corteon Moore"],
     synopsis:
       "Sloane and four classmates take cover in Cortege High to escape a world plagued by the infected. As danger relentlessly pounds on the doors, Sloane begins to see the world through the eyes of those who actually want to live and takes matters into her own hands."

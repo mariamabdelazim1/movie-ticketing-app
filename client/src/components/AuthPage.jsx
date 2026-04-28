@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { EMAIL_PATTERN } from "../utils/format.js";
 import "./AuthPage.css";
