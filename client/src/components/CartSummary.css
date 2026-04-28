@@ -1,0 +1,43 @@
+.summary {
+  border: 1px solid #e2e2de;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 22px;
+  position: sticky;
+  top: 22px;
+}
+
+.summary h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary dl {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.summary dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.total {
+  padding-top: 12px;
+  border-top: 1px solid #e2e2de;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.clear-rewards {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1180px) {
+  .summary {
+    position: static;
+  }
+}
