@@ -164,7 +164,30 @@ export function App() {
   }
 
   function changeSnack(itemId, delta) {
-    setSnacks((current) => ({ ...current, [itemId]: Math.max(0, (current[itemId] || 0) + delta) }));
+    const item = concessions.find((concession) => concession._id === itemId);
+    setSnacks((current) => {
+      const quantity = Math.max(0, (current[itemId] || 0) + delta);
+      return { ...current, [itemId]: quantity };
+    });
+    if (item?.name.toLowerCase().includes("popcorn") && (snacks[itemId] || 0) + delta <= 0) {
+      setRewardRedemptions((current) => ({ ...current, freePopcorn: false }));
+    }
+  }
+
+  function removeSeat(seatId) {
+    const nextSeats = selectedSeats.filter((seat) => seat !== seatId);
+    setSelectedSeats(nextSeats);
+    if (!nextSeats.length) {
+      setRewardRedemptions((current) => ({ ...current, ticketDiscount: false, freeTicket: false }));
+    }
+  }
+
+  function removeSnack(itemId) {
+    const item = concessions.find((concession) => concession._id === itemId);
+    setSnacks((current) => ({ ...current, [itemId]: 0 }));
+    if (item?.name.toLowerCase().includes("popcorn")) {
+      setRewardRedemptions((current) => ({ ...current, freePopcorn: false }));
+    }
   }
 
   function redeemReward(rewardKey) {
@@ -458,6 +481,8 @@ export function App() {
             selectedSeats={selectedSeats}
             concessions={concessions}
             snacks={snacks}
+            removeSeat={removeSeat}
+            removeSnack={removeSnack}
             ticketTotal={ticketTotal}
             snackTotal={snackTotal}
             cartTotal={cartTotal}

@@ -1,5 +1,5 @@
 import React from "react";
-import { ReceiptText } from "lucide-react";
+import { ReceiptText, Trash2 } from "lucide-react";
 import { formatShowTime, money } from "../utils/format.js";
 import { CartSummary } from "./CartSummary.jsx";
 import "./CartPage.css";
@@ -9,6 +9,8 @@ export function CartPage({
   selectedSeats,
   concessions,
   snacks,
+  removeSeat,
+  removeSnack,
   ticketTotal,
   snackTotal,
   cartTotal,
@@ -27,11 +29,35 @@ export function CartPage({
         <h2><ReceiptText size={22} /> Review Reservation</h2>
         <p>{showDetails?.movie?.title} · {showDetails && formatShowTime(showDetails.startsAt)}</p>
         <h3>Seats</h3>
-        <p>{selectedSeats.join(", ") || "No seats selected"}</p>
+        {selectedSeats.length ? (
+          <div className="cart-items">
+            {selectedSeats.map((seat) => (
+              <div className="cart-item" key={seat}>
+                <span>Seat {seat}</span>
+                <button className="icon-button" onClick={() => removeSeat(seat)} title={`Remove seat ${seat}`}>
+                  <Trash2 size={17} />
+                </button>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p>No seats selected</p>
+        )}
         <h3>Snacks & Drinks</h3>
-        {selectedSnacks.length ? selectedSnacks.map((item) => (
-          <p key={item._id}>{item.name} x {snacks[item._id]} · {money(item.price * snacks[item._id])}</p>
-        )) : <p>No food selected.</p>}
+        {selectedSnacks.length ? (
+          <div className="cart-items">
+            {selectedSnacks.map((item) => (
+              <div className="cart-item" key={item._id}>
+                <span>{item.name} x {snacks[item._id]} · {money(item.price * snacks[item._id])}</span>
+                <button className="icon-button" onClick={() => removeSnack(item._id)} title={`Remove ${item.name}`}>
+                  <Trash2 size={17} />
+                </button>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p>No food selected.</p>
+        )}
       </section>
       <CartSummary
         selectedSeats={selectedSeats}

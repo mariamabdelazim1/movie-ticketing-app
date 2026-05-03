@@ -5,6 +5,45 @@
   align-items: start;
 }
 
+.cart-items {
+  display: grid;
+  gap: 10px;
+}
+
+.cart-item {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border: 1px solid #eeeeea;
+  border-radius: 8px;
+  padding: 8px 10px 8px 14px;
+}
+
+.cart-item span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-weight: 800;
+}
+
+.icon-button {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border: 1px solid #dedede;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  color: #b42318;
+}
+
+.icon-button:hover {
+  border-color: #f3b0d3;
+  background: #fff0f6;
+}
+
 @media (max-width: 1180px) {
   .cart-page {
     grid-template-columns: 1fr;
