@@ -29,11 +29,12 @@ export function SeatFoodPage(props) {
         <h2>{showDetails?.movie?.title}</h2>
         <p>{showDetails ? `${formatShowTime(showDetails.startsAt)} · ${showDetails.auditorium}` : "Choose a showtime first."}</p>
         <div className="screen">Screen</div>
-        <div className={`seat-map ${showDetails?.type === "gold" ? "gold-map" : ""}`}>
-          {showDetails?.seats.map((seat) => (
+        <div className={`seat-map ${showDetails?.type === "gold" ? "gold-map" : ""}`}> 
+          {showDetails?.seats.map((seat) => ( //seat-map class dyman ,, gold-map class law gold show
+            // law details el show mawgood, loop 3ala el seats w show kol seat button
             <button
               key={seat.id}
-              className={`seat ${seat.status} ${selectedSeats.includes(seat.id) ? "selected" : ""}`}
+              className={`seat ${seat.status} ${selectedSeats.includes(seat.id) ? "selected" : ""}` /* always has seat class. , w seat status available wla booked w selected aw la*/ }
               disabled={seat.status === "booked"}
               onClick={() => toggleSeat(seat)}
             >

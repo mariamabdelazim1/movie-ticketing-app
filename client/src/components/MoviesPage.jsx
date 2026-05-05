@@ -3,7 +3,7 @@ import "./MoviesPage.css";
 export function MoviesPage({ movies, openMovie }) {
   return (
     <div className="movie-grid">
-      {movies.map((movie) => (
+      {movies.map((movie) => ( //loops through movies and creates a card for each movie with poster, title, rating, language and showtimes button that opens movie details when clicked
         <article className="poster-card" key={movie._id}>
           <button onClick={() => openMovie(movie)}>
             <img src={movie.poster} alt={movie.title} />
