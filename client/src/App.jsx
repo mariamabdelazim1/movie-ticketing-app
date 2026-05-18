@@ -21,7 +21,7 @@ const REWARD_COSTS = {
 };
 
 export function App() {
-  const [page, setPage] = useState("movies");
+  const [page, setPage] = useState("movies"); //awl page shown is moviesPage
   const [movies, setMovies] = useState([]);
   const [concessions, setConcessions] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
@@ -52,7 +52,7 @@ export function App() {
 
   useEffect(() => {
     loadData();
-  }, []);
+  }, []); // loads movies and concessions when app first mounts and sets starting page as movies
 
   useEffect(() => {
     if (selectedShowId) {

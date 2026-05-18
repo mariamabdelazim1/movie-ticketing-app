@@ -16,7 +16,7 @@ export function MoviePage({ movie, chooseShow, user }) {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
-        />
+        />//ashan a embed another webpage for the trailer .
       </div>
       <section className="detail-copy">
         <span className="tag">{movie.rating} · {movie.language} · {movie.duration} min</span>
